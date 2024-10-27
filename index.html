@@ -1,98 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>Aryaadg.dev | Arya Adi Guna - Web Developer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <script>
-    // JavaScript untuk toggle menu burger
-    function toggleMenu() {
-      var menu = document.getElementById("mobile-menu");
-      menu.classList.toggle("hidden");
-    }
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src="https://cdn.tailwindcss.com">
   </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
   <style>
-    /* Custom gradient background */
-    body {
-      background: linear-gradient(135deg, #3b82f6, #60a5fa);
-      font-family: 'Inter', sans-serif;
-    }
-  </style>  
+   body {
+            font-family: 'Inter', sans-serif;
+        }
+  </style>
 </head>
+<body>
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex justify-between items-center">
-        <!-- Logo -->
-        <div>
-          <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-            <img src="IMG/logo.png" alt="Logo" class="h-10 w-10 mr-2">
-            <span class="font-bold">Aryaadg.dev</span>
-          </a>
-        </div>
-        <!-- Primary Nav for larger screens -->
-        <div class="hidden md:flex items-center space-x-1">
-          <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Home</a>
-          <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Services</a>
-          <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Portfolio</a>
-          <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
-        </div>
-        <!-- Sign Up Button for large screens -->
-        <div class="hidden md:flex items-center space-x-1">
-          <a href="#" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">Contact Me</a>
-        </div>
-        <!-- Hamburger Icon -->
-        <div class="md:hidden flex items-center">
-          <button onclick="toggleMenu()" class="mobile-menu-button">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
+<!-- Navbar -->
+<header class="bg-gradient-to-r from-purple-400 to-purple-600 text-white">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <div class="text-2xl font-bold">
+      Aryaadg.dev
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden">
-      <div class="bg-gray-100 h-screen flex flex-col justify-center items-center space-y-6">
-        <a href="#" class="text-gray-700 text-2xl hover:text-gray-900">Home</a>
-        <a href="#" class="text-gray-700 text-2xl hover:text-gray-900">Services</a>
-        <a href="#" class="text-gray-700 text-2xl hover:text-gray-900">Portfolio</a>
-        <a href="#" class="text-gray-700 text-2xl hover:text-gray-900">Contact</a>
-        <a href="#" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">Contact Me</a>
+    <!-- Mobile menu button -->
+    <div class="block lg:hidden">
+      <button id="mobile-menu-button" class="focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+
+    <nav id="navbar" class="hidden lg:flex space-x-6">
+      <a class="hover:text-gray-300" href="#">
+        Home
+      </a>
+      <a class="hover:text-gray-300" href="#">
+        Services
+      </a>
+      <a class="hover:text-gray-300" href="#">
+        About Me
+      </a>
+      <a class="hover:text-gray-300" href="#">
+        Portfolio
+      </a>
+      <a class="hover:text-gray-300" href="#">
+        Blog
+      </a>
+    </nav>
+
+    <a class="bg-white text-purple-600 px-4 py-2 rounded-full hidden lg:inline-block" href="#">
+      Contact Me
+    </a>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden">
+    <nav class="flex flex-col space-y-2 py-4 px-6 bg-purple-500">
+      <a class="hover:text-gray-300" href="#">
+        Home
+      </a>
+      <a class="hover:text-gray-300" href="#">
+        Services
+      </a>
+      <a class="hover:text-gray-300" href="#">
+        About Me
+      </a>
+      <a class="hover:text-gray-300" href="#">
+        Portfolio
+      </a>
+      <a class="hover:text-gray-300" href="#">
+        Blog
+      </a>
+      <a class="bg-white text-purple-600 px-4 py-2 rounded-full" href="#">
+        Contact Me
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navbar = document.getElementById('navbar');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-purple-400 to-purple-600 text-white py-20">
+  <div class="container mx-auto flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2 mb-10 md:mb-0">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4"> <!-- Adjusted text size for smaller screens -->
+        I’m Arya Adi Guna
+      </h1>
+      <p class="text-base md:text-lg mb-6"> <!-- Adjusted text size for smaller screens -->
+        I'm a web developer and content creator based in Bali. I am learning about web development and building modern responsive websites and web applications. I've made this website to share my knowledge and work with the world, and to create awesome content.
+      </p>
+      <a class="bg-white text-purple-600 px-6 py-2 md:py-3 rounded-full text-base md:text-lg" href="#"> <!-- Adjusted button padding and text size -->
+        Download CV
+      </a>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+      <img alt="Portrait of Bayu Kurniawan" class="rounded-full" height="400" src="IMG/NEW.JPG" width="400"/>
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="py-20 bg-gray-100">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10">
+      Provide Awesome Service For You
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+        <i class="fas fa-comments text-purple-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Discuss</h3>
+        <p>Share your ideas, we will make it real and awesome!</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+        <i class="fas fa-cogs text-purple-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Build</h3>
+        <p>Implement the website according to your needs.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+        <i class="fas fa-cloud-upload-alt text-purple-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Deploy</h3>
+        <p>Deploy the website to the cloud and make it live.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+        <i class="fas fa-rocket text-purple-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Launch</h3>
+        <p>Assist you in launching your website to your audience.</p>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- Home -->
-  <section class="min-h-screen w-full flex items-center justify-center bg-gray-900">
-    <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between">
-      
-      <!-- Left Column: Text and Download Button -->
-      <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
-        <h1 class="text-4xl font-bold text-white mb-4">Arya Adi Guna</h1>
-        <p class="text-white text-lg mb-6">
-          I am a passionate web developer with 5 years of experience in building modern and responsive websites. I specialize in front-end development using modern frameworks and tools such as React, Next.js, and Tailwind CSS.
+<!-- About Me -->
+<section class="py-20 bg-gray-100">
+  <div class="container mx-auto flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2">
+      <img alt="Portrait of Bayu Kurniawan" class="rounded-full mx-auto w-80 h-80 md:w-400 md:h-400" src="IMG/NEW.JPG"/>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0">
+      <h2 class="text-3xl font-bold mb-4 text-center md:text-left">
+        I Have Quality And Experience
+      </h2>
+      <p class="mb-6 text-center md:text-left">
+        My name is Arya Adi Guna, I'm a web developer and content creator based in Bali. I am learning about web development and building modern responsive websites and web applications. I've made this website to share my knowledge and work with the world, and to create awesome content.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- YouTube Channel Section -->
+<section class="py-20 bg-gradient-to-r from-purple-400 to-purple-600 text-white text-center">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-4">
+      Visit My Youtube Channel
+    </h2>
+    <p class="mb-6">
+      Want to get some programming resources?
+    </p>
+    <a class="bg-white text-purple-600 px-6 py-3 rounded-full inline-flex items-center mx-auto" href="#">
+      <i class="fab fa-youtube text-2xl mr-2"></i>
+      Aryaadg TV
+    </a>
+  </div>
+</section>
+
+<!-- porto -->
+<section class="py-20">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10">
+      Latest Works
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img alt="Project Purple CMS" class="mb-4" src="https://storage.googleapis.com/a1aa/image/d7OUUcjRVf01fky9mfHtrYPfy3wHpD8lmPN0f3df5BFrKiw6E.jpg" class="w-full h-64 object-cover rounded"/>
+        <h3 class="text-xl font-semibold mb-2">
+          Purple CMS
+        </h3>
+        <p class="mb-4">
+          Purple is a flexible, user-friendly, and customizable Content Management System.
         </p>
-        <a href="#" class="inline-block py-3 px-6 bg-white text-blue-600 font-semibold rounded hover:bg-gray-200 transition duration-300">Download CV</a>
+        <a class="bg-purple-600 text-white px-4 py-2 rounded-full" href="#">
+          Read More
+        </a>
       </div>
-  
-      <!-- Right Column: Profile Picture -->
-      <div class="md:w-1/2 flex justify-center">
-        <img src="IMG/new.png" alt="Profile Picture" class="w-auto h-80 object-cover">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img alt="Project BPR Sinar Kuta" class="mb-4" src="https://storage.googleapis.com/a1aa/image/TFrQqYT6KZqTK1zdP4muQxNZN0uITureH5NaqoDQgi4REh1JA.jpg" class="w-full h-64 object-cover rounded"/>
+        <h3 class="text-xl font-semibold mb-2">
+          BPR Sinar Kuta
+        </h3>
+        <p class="mb-4">
+          Bank Perkreditan Rakyat Sinar Kuta is a local bank in Bali.
+        </p>
+        <a class="bg-purple-600 text-white px-4 py-2 rounded-full" href="#">
+          Read More
+        </a>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img alt="Project Diari Bali" class="mb-4" src="https://storage.googleapis.com/a1aa/image/OWHaBRwIjbZzMJbqe2qdIPbsLUVmGSUGpj6x8NPFfSApICrTA.jpg" class="w-full h-64 object-cover rounded"/>
+        <h3 class="text-xl font-semibold mb-2">
+          Diari Bali
+        </h3>
+        <p class="mb-4">
+          Diari Bali is a local news website in Bali.
+        </p>
+        <a class="bg-purple-600 text-white px-4 py-2 rounded-full" href="#">
+          Read More
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-10">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 Aryaadg Dev. All Rights Reserved.</p>
-    </div>
-  </footer>
+<!-- footer -->
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-purple-400 to-purple-600 text-white py-10">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">
+      Follow My Social Media
+    </h2>
+    <p class="mb-6">
+      Ask questions, share ideas, discuss with the community, and keep programming buddy with Aryaadg.
+    </p>  
+    <a class="bg-white text-purple-600 px-6 py-3 rounded-full" href="#">
+      Join With Aryaadg.dev
+    </a>
+  </div>
+  <div class="container mx-auto mt-10 text-center">
+    <p>
+      © 2024 Aryaadg.dev. All rights reserved.
+    </p>
+  </div>
+</footer>
 
+<!-- bawah -->
 </body>
 </html>
