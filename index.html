@@ -17,10 +17,10 @@
         }
   </style>
 </head>
-<body>
-
+<body class="scroll-smooth">
+<!-- atas -->
 <!-- Navbar -->
-<header class="bg-gradient-to-r from-purple-400 to-purple-600 text-white">
+<header class="sticky top-0 bg-gradient-to-r from-purple-400 to-purple-600 text-white z-50">
   <div class="container mx-auto flex justify-between items-center py-4 px-6">
     <div class="text-2xl font-bold">
       Aryaadg.dev
@@ -36,65 +36,31 @@
     </div>
 
     <nav id="navbar" class="hidden lg:flex space-x-6">
-      <a class="hover:text-gray-300" href="#">
-        Home
-      </a>
-      <a class="hover:text-gray-300" href="#">
-        Services
-      </a>
-      <a class="hover:text-gray-300" href="#">
-        About Me
-      </a>
-      <a class="hover:text-gray-300" href="#">
-        Portfolio
-      </a>
-      <a class="hover:text-gray-300" href="#">
-        Blog
-      </a>
+      <a class="hover:text-gray-300" href="#home">Home</a>
+      <a class="hover:text-gray-300" href="#service">Services</a>
+      <a class="hover:text-gray-300" href="#about">About Me</a>
+      <a class="hover:text-gray-300" href="#porto">Portfolio</a>
+      <a class="hover:text-gray-300" href="#">Blog</a>
     </nav>
 
-    <a class="bg-white text-purple-600 px-4 py-2 rounded-full hidden lg:inline-block" href="#">
-      Contact Me
-    </a>
+    <a class="bg-white text-purple-600 px-4 py-2 rounded-full hidden lg:inline-block" href="#">Contact Me</a>
   </div>
 
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden lg:hidden">
     <nav class="flex flex-col space-y-2 py-4 px-6 bg-purple-500">
-      <a class="hover:text-gray-300" href="#">
-        Home
-      </a>
-      <a class="hover:text-gray-300" href="#">
-        Services
-      </a>
-      <a class="hover:text-gray-300" href="#">
-        About Me
-      </a>
-      <a class="hover:text-gray-300" href="#">
-        Portfolio
-      </a>
-      <a class="hover:text-gray-300" href="#">
-        Blog
-      </a>
-      <a class="bg-white text-purple-600 px-4 py-2 rounded-full" href="#">
-        Contact Me
-      </a>
+      <a class="hover:text-gray-300" href="#home">Home</a>
+      <a class="hover:text-gray-300" href="#service">Services</a>
+      <a class="hover:text-gray-300" href="#about">About Me</a>
+      <a class="hover:text-gray-300" href="#porto">Portfolio</a>
+      <a class="hover:text-gray-300" href="#">Blog</a>
+      <a class="bg-white text-purple-600 px-4 py-2 rounded-full" href="#">Contact Me</a>
     </nav>
   </div>
 </header>
 
-<script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const navbar = document.getElementById('navbar');
-
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
-
 <!-- Hero Section -->
-<section class="bg-gradient-to-r from-purple-400 to-purple-600 text-white py-20">
+<section class="bg-gradient-to-r from-purple-400 to-purple-600 text-white py-20" id="home">
   <div class="container mx-auto flex flex-col md:flex-row items-center">
     <div class="md:w-1/2 mb-10 md:mb-0 px-4"> <!-- Add padding -->
       <h1 class="text-3xl md:text-5xl font-bold mb-4 text-center md:text-left"> <!-- Center text on mobile -->
@@ -117,7 +83,7 @@
 
 
 <!-- SERVICES -->
-<section class="py-20 bg-gray-100">
+<section class="py-20 bg-gray-100" id="service">
   <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-10">
       Provide Awesome Service For You
@@ -148,7 +114,7 @@
 </section>
 
 <!-- About Me -->
-<section class="py-20 bg-gray-100">
+<section class="py-20 bg-gray-100" id="about">
   <div class="container mx-auto flex flex-col md:flex-row items-center">
     <div class="md:w-1/2">
       <img alt="Portrait of Bayu Kurniawan" class="rounded-full mx-auto w-80 h-80 md:w-400 md:h-400" src="IMG/NEW.JPG"/>
@@ -181,7 +147,7 @@
 </section>
 
 <!-- porto -->
-<section class="py-20">
+<section class="py-20" id="porto">
   <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-10">
       Latest Works
@@ -227,7 +193,6 @@
   </div>
 </section>
 
-<!-- footer -->
 <!-- Footer -->
 <footer class="bg-gradient-to-r from-purple-400 to-purple-600 text-white py-10">
   <div class="container mx-auto text-center">
@@ -251,3 +216,28 @@
 <!-- bawah -->
 </body>
 </html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navbarLinks = document.querySelectorAll('nav a');
+
+    navbarLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // Mencegah perilaku default tautan
+
+        const targetId = this.getAttribute('href'); // Mendapatkan ID target
+        const targetElement = document.querySelector(targetId); // Menemukan elemen target
+
+        // Menghitung posisi scroll dengan offset
+        const offset = 80; // Atur offset sesuai kebutuhan
+        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        // Melakukan scroll halus ke posisi yang ditentukan
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth' // Menambahkan efek scroll halus
+        });
+      });
+    });
+  });
+</script>
