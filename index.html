@@ -43,7 +43,7 @@
       <a class="hover:text-gray-300" href="#">Blog</a>
     </nav>
 
-    <a class="bg-white text-purple-600 px-4 py-2 rounded-full hidden lg:inline-block" href="#">Contact Me</a>
+    <a class="bg-white text-purple-600 px-4 py-2 rounded-full hidden lg:inline-block" href="https://www.instagram.com/aryaadg">Contact Me</a>
   </div>
 
   <!-- Mobile menu -->
@@ -54,7 +54,7 @@
       <a class="hover:text-gray-300" href="#about">About Me</a>
       <a class="hover:text-gray-300" href="#porto">Portfolio</a>
       <a class="hover:text-gray-300" href="#">Blog</a>
-      <a class="bg-white text-purple-600 px-4 py-2 rounded-full" href="#">Contact Me</a>
+      <a class="bg-white text-purple-600 px-4 py-2 rounded-full" href="https://www.instagram.com/aryaadg">Contact Me</a>
     </nav>
   </div>
 </header>
@@ -70,7 +70,7 @@
         I'm a web developer and content creator based in Bali. I am learning about web development and building modern responsive websites and web applications. I've made this website to share my knowledge and work with the world, and to create awesome content.
       </p>
       <div class="flex justify-center md:justify-start"> <!-- Center button on mobile -->
-        <a class="bg-white text-purple-600 px-6 py-2 md:py-3 rounded-full text-base md:text-lg" href="#">
+        <a class="bg-white text-purple-600 px-6 py-2 md:py-3 rounded-full text-base md:text-lg" href="https://docs.google.com/uc?export=download&id=1q5-S-1vNH9eSQ0-JfUeuiUPhrb2BVh9g">
           Download CV
         </a>
       </div>
@@ -217,27 +217,4 @@
 </body>
 </html>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const navbarLinks = document.querySelectorAll('nav a');
-
-    navbarLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault(); // Mencegah perilaku default tautan
-
-        const targetId = this.getAttribute('href'); // Mendapatkan ID target
-        const targetElement = document.querySelector(targetId); // Menemukan elemen target
-
-        // Menghitung posisi scroll dengan offset
-        const offset = 80; // Atur offset sesuai kebutuhan
-        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-
-        // Melakukan scroll halus ke posisi yang ditentukan
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth' // Menambahkan efek scroll halus
-        });
-      });
-    });
-  });
-</script>
+<script src="script.js"></script>
