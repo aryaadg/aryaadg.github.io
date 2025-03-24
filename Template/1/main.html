@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Yang Tercinta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            overflow-x: hidden;
+        }
+        
+        .dancing-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .heart {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .photo-slider {
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Main Container -->
+    <div class="min-h-screen relative overflow-hidden">
+        <!-- Background Particles -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-10 left-20 w-3 h-3 bg-pink-500 rounded-full opacity-70 animate-pulse"></div>
+            <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-red-400 rounded-full opacity-60"></div>
+            <div class="absolute bottom-20 left-1/3 w-4 h-4 bg-rose-300 rounded-full opacity-50 animate-ping"></div>
+            <div class="absolute top-3/4 right-20 w-3 h-3 bg-pink-400 rounded-full opacity-70"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="container mx-auto px-4 py-12 relative z-10">
+            <!-- Header -->
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 dancing-font text-pink-400 animate__animated animate__fadeInDown">
+                    Untuk <span class="text-red-400 heart">❤</span> Ku
+                </h1>
+                <p class="text-lg md:text-xl text-pink-200 animate__animated animate__fadeIn animate__delay-1s">
+                    "Dalam lautan manusia, hanya kamu yang membuatku ingin berlabuh"
+                </p>
+            </header>
+            
+            <!-- Photo Slider -->
+            <div class="photo-slider rounded-xl shadow-2xl mb-12 overflow-hidden border-2 border-pink-700 animate__animated animate__fadeIn animate__delay-1s">
+                <img src="assets/1.jpg" alt="Love Photo 1" class="slide active">
+                <img src="assets/2.jpg" alt="Love Photo 2" class="slide">
+                <img src="assets/3.jpg" alt="Love Photo 3" class="slide">
+                <img src="assets/4.jpg" alt="Love Photo 4" class="slide">
+                <img src="assets/5.jpg" alt="Love Photo 5" class="slide">
+            </div>
+            
+            <!-- Love Messages -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Message 1 -->
+                <div class="bg-black bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-pink-900 animate__animated animate__fadeInLeft animate__delay-2s">
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl text-pink-500 mr-3">💖</div>
+                        <h3 class="text-xl font-bold text-pink-300">Kamu Sempurna</h3>
+                    </div>
+                    <p class="text-pink-100">
+                        Aku tidak mencari yang sempurna, tapi ketika bertemu denganmu, 
+                        aku menyadari bahwa kesempurnaan itu nyata. Kamu adalah versi terbaik 
+                        dari segala yang pernah aku impikan.
+                    </p>
+                </div>
+                
+                <!-- Message 2 -->
+                <div class="bg-black bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-pink-900 animate__animated animate__fadeInRight animate__delay-2s">
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl text-pink-500 mr-3">✨</div>
+                        <h3 class="text-xl font-bold text-pink-300">Bersamamu</h3>
+                    </div>
+                    <p class="text-pink-100">
+                        Bersamamu, waktu terasa begitu singkat. Setiap detik berharga, 
+                        setiap momen berarti. Aku ingin menghabiskan sisa hidupku 
+                        membuatmu tersenyum seperti kamu membuatku tersenyum.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Big Love Quote -->
+            <div class="bg-gradient-to-r from-pink-900 to-purple-900 p-8 rounded-xl text-center mb-12 animate__animated animate__fadeInUp animate__delay-3s">
+                <p class="text-2xl md:text-3xl dancing-font mb-4">
+                    "Cinta kita bukan tentang memiliki, tapi tentang saling menjadi milik"
+                </p>
+                <div class="flex justify-center space-x-4 text-2xl">
+                    <span class="floating">💕</span>
+                    <span class="floating" style="animation-delay: 0.5s">🌸</span>
+                    <span class="floating" style="animation-delay: 1s">🌹</span>
+                </div>
+            </div>
+            
+            <!-- Love Countdown -->
+            <div class="text-center mb-12 animate__animated animate__fadeIn animate__delay-3s">
+                <h3 class="text-xl font-bold text-pink-300 mb-4">Sudah Berapa Lama Kita Saling Mencintai</h3>
+                <div class="grid grid-cols-4 gap-4 max-w-md mx-auto">
+                    <div class="bg-black bg-opacity-50 p-4 rounded-lg">
+                        <div class="text-3xl font-bold text-pink-400" id="love-years">0</div>
+                        <div class="text-sm text-pink-200">Tahun</div>
+                    </div>
+                    <div class="bg-black bg-opacity-50 p-4 rounded-lg">
+                        <div class="text-3xl font-bold text-pink-400" id="love-months">0</div>
+                        <div class="text-sm text-pink-200">Bulan</div>
+                    </div>
+                    <div class="bg-black bg-opacity-50 p-4 rounded-lg">
+                        <div class="text-3xl font-bold text-pink-400" id="love-days">0</div>
+                        <div class="text-sm text-pink-200">Hari</div>
+                    </div>
+                    <div class="bg-black bg-opacity-50 p-4 rounded-lg">
+                        <div class="text-3xl font-bold text-pink-400" id="love-hours">0</div>
+                        <div class="text-sm text-pink-200">Jam</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Final Button -->
+            <div class="text-center animate__animated animate__fadeInUp animate__delay-4s">
+                <button onclick="showLove()" class="px-8 py-4 bg-gradient-to-r from-pink-600 to-red-600 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition-transform flex items-center mx-auto">
+                    <span class="mr-2">Klik Untuk Cinta</span> 
+                    <span class="heart">❤</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Floating Hearts -->
+        <div id="floating-hearts" class="fixed inset-0 pointer-events-none z-20 overflow-hidden"></div>
+    </div>
+
+    <script>
+        // Photo slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Change slide every 2 seconds
+        setInterval(nextSlide, 4000);
+        
+        // Love countdown calculation (set your anniversary date here)
+        function updateLoveTime() {
+            const anniversary = new Date('2024-08-09'); // Change this to your anniversary date
+            const now = new Date();
+            const diff = now - anniversary;
+            
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            document.getElementById('love-years').textContent = years;
+            document.getElementById('love-months').textContent = months;
+            document.getElementById('love-days').textContent = Math.floor(days);
+            document.getElementById('love-hours').textContent = Math.floor(hours);
+        }
+        
+        // Update love time immediately and then every hour
+        updateLoveTime();
+        setInterval(updateLoveTime, 3600000);
+        
+        // Create floating hearts effect
+        function showLove() {
+            const container = document.getElementById('floating-hearts');
+            container.innerHTML = '';
+            
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.className = 'absolute text-pink-500 text-2xl opacity-0';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.animation = `float-up ${Math.random() * 2 + 2}s ease-in forwards`;
+                
+                // Add animation styles dynamically
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes float-up {
+                        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+                        100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                container.appendChild(heart);
+                
+                // Start animation
+                setTimeout(() => {
+                    heart.style.opacity = '1';
+                }, 10);
+            }
+            
+            // Show surprise message
+            setTimeout(() => {
+                alert("Aku mencintaimu lebih dari apapun di dunia ini! 💖");
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

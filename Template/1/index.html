@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natania Ardelia Cahyanii Tercinta ❤️</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .cover {
+            background: url('assets/covers.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Overlay gelap */
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            margin-top: 1rem;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .password-input {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 1rem;
+            z-index: 2;
+        }
+
+        .password-input input {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            outline: none;
+        }
+
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 1rem;
+            z-index: 2;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .keypad button {
+            padding: 20px;
+            font-size: 18px;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .keypad button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .keypad button:active {
+            transform: scale(0.95);
+        }
+
+        .keypad button.clear {
+            grid-column: span 2;
+        }
+
+        .keypad button.ok {
+            background-color: rgba(76, 175, 80, 0.7);
+        }
+
+        .keypad button.ok:hover {
+            background-color: rgba(76, 175, 80, 0.9);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <!-- Judul -->
+        <h1 class="title">Untuk Made Natania Ardelia Cahyanii Tersayang ❤️</h1>
+
+        <!-- Subjudul -->
+        <p class="subtitle">
+            "Haii Kak Natt, Gakerasa yaa udah 6 bulan semenjak agustus kita jadian hehehe, kanggoin surprise kecil2an bebb hahaha. dibaca yaa."
+        </p>
+
+        <!-- Subjudul -->
+        <p class="subtitle">
+            Tanggal Berapa Kita Jadian  
+        </p>
+
+        <!-- Input Password -->
+        <div class="password-input">
+            <input type="password" id="password" placeholder="Masukan Tanggal Jadian" readonly>
+        </div>
+
+        <!-- Numeric Keypad -->
+        <div class="keypad">
+            <button onclick="addNumber('1')">1</button>
+            <button onclick="addNumber('2')">2</button>
+            <button onclick="addNumber('3')">3</button>
+            <button onclick="addNumber('4')">4</button>
+            <button onclick="addNumber('5')">5</button>
+            <button onclick="addNumber('6')">6</button>
+            <button onclick="addNumber('7')">7</button>
+            <button onclick="addNumber('8')">8</button>
+            <button onclick="addNumber('9')">9</button>
+            <button class="clear" onclick="clearPassword()">Hapus</button>
+            <button onclick="addNumber('0')">0</button>
+            <button class="ok" onclick="submitPassword()">Masuk</button>
+        </div>
+    </div>
+
+    <script>
+        function addNumber(number) {
+            const passwordInput = document.getElementById('password');
+            passwordInput.value += number;
+        }
+
+        function clearPassword() {
+            const passwordInput = document.getElementById('password');
+            passwordInput.value = '';
+        }
+
+        function submitPassword() {
+            const passwordInput = document.getElementById('password');
+            const password = passwordInput.value;
+
+            // Ganti dengan password yang diinginkan
+            if (password === '1234') {
+                window.location.href = "main.html";
+            } else {
+                alert('Password salah! Coba lagi.');
+                clearPassword();
+            }
+        }
+    // yes
+        
+    const messages = ["Aku sayang kamu.", "Kamu adalah yang terbaik.", "Terima kasih sudah ada di hidupku."];
+    let index = 0;
+    let charIndex = 0;
+
+    function type() {
+        if (charIndex < messages[index].length) {
+            document.getElementById('typing-effect').innerText += messages[index].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 100);
+        } else {
+            setTimeout(erase, 2000);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            document.getElementById('typing-effect').innerText = messages[index].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, 50);
+        } else {
+            index = (index + 1) % messages.length;
+            setTimeout(type, 500);
+        }
+    }
+
+    type();
+
+    </script>
+
+</body>
+</html>
